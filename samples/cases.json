@@ -1,0 +1,136 @@
+{
+  "description": "Ready-to-file dispute templates for manual testing against the deployed Meridian Tribunal contract on GenLayer Studionet (chain 61999). Evidence URLs point at stable, publicly reachable pages so the AI judgment pipeline can scrape them during a live verdict.",
+  "network": {
+    "chain": "studionet",
+    "chainId": 61999,
+    "rpc": "https://studio.genlayer.com/api",
+    "currency": "GEN"
+  },
+  "stages": {
+    "full-cycle": "Template includes a defense — file it from wallet A, defend from wallet B, stake from wallet C, then summon the verdict.",
+    "judge-now": "Template includes a defense — after filing and defending, the case can be judged immediately.",
+    "await-defense": "Template intentionally has no defense — file it and practice the defense step from the defendant wallet."
+  },
+  "cases": [
+    {
+      "slug": "escrowed-asset-never-settled",
+      "stage": "full-cycle",
+      "title": "Escrowed digital asset never settled",
+      "description": "I purchased a digital collectible through escrow for a fixed GEN sum. I released the payment after the transfer record appeared on the registry page, but the counterparty then claimed the transfer was reversed and refused to honor delivery. The registry shows the asset in my wallet while the seller simultaneously listed it for resale to a third party.",
+      "evidence_urls": ["https://example.com/", "https://www.iana.org/help/example-domains"],
+      "defense": {
+        "text": "The transfer record the plaintiff references was a pending listing authorization, not a completed settlement. My terms clearly require both parties to countersign the final receipt before ownership changes hands, and the plaintiff never countersigned. I have not received the disputed payment, which remained locked in escrow pending that signature.",
+        "evidence_urls": ["https://example.org/"]
+      },
+      "suggested_stakes": [
+        { "outcome": "GUILTY", "gen": 10 },
+        { "outcome": "NOT_GUILTY", "gen": 4 },
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 1 }
+      ]
+    },
+    {
+      "slug": "validator-uptime-sla",
+      "stage": "judge-now",
+      "title": "Validator uptime SLA breach claim",
+      "description": "Our indexing service contracted an infrastructure partner guaranteeing 99.5% monthly uptime under a published service level agreement. Public status records show eleven hours of downtime across four separate incidents during the term, well past the agreed threshold. We are seeking an on-chain determination of breach so the penalty clause can be exercised.",
+      "evidence_urls": ["https://example.com/", "https://www.iana.org/domains/reserved"],
+      "defense": {
+        "text": "Two of the four recorded incidents were scheduled maintenance windows announced fourteen days in advance, which the agreement explicitly excludes from downtime calculations. A third incident originated in an upstream provider outage listed in the agreement's force majeure clause. Only one incident of forty minutes qualifies as unexcused downtime, keeping measured uptime within the guaranteed threshold.",
+        "evidence_urls": ["https://example.org/", "https://example.com/"]
+      },
+      "suggested_stakes": [
+        { "outcome": "NOT_GUILTY", "gen": 12 },
+        { "outcome": "GUILTY", "gen": 8 },
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 3 }
+      ]
+    },
+    {
+      "slug": "missed-pipeline-milestone",
+      "stage": "full-cycle",
+      "title": "Missed delivery milestone on data pipeline build",
+      "description": "A contracted engineering studio failed to deliver an analytics pipeline by the milestone date, which delayed our reporting cycle by three weeks. Communication logs show repeated written assurances that delivery was days away, while the studio's own status updates acknowledged the work had been deprioritized in favor of another client engagement.",
+      "evidence_urls": ["https://example.com/"],
+      "defense": {
+        "text": "The plaintiff requested a specification change two weeks before the deadline that materially expanded the scope, and our revised delivery estimate was communicated immediately. The plaintiff continued to coordinate normally against that revised schedule without objection, which constitutes acceptance. Delivery followed the renegotiated timeline.",
+        "evidence_urls": ["https://example.org/"]
+      },
+      "suggested_stakes": [
+        { "outcome": "NOT_GUILTY", "gen": 15 },
+        { "outcome": "GUILTY", "gen": 6 },
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 5 }
+      ]
+    },
+    {
+      "slug": "grant-deliverables-missing",
+      "stage": "await-defense",
+      "title": "Community grant deliverables never submitted",
+      "description": "The treasury awarded a development grant contingent on a public milestone report due at the end of the funding period. The report was never published, and observable fund movements show the allocation redirected to activity unrelated to the approved proposal. The grantee has not responded to two formal requests for the deliverable.",
+      "evidence_urls": ["https://example.com/", "https://www.iana.org/help/example-domains"],
+      "defense": null,
+      "suggested_stakes": [
+        { "outcome": "GUILTY", "gen": 8 },
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 4 }
+      ]
+    },
+    {
+      "slug": "sponsored-content-authenticity",
+      "stage": "full-cycle",
+      "title": "Sponsored content authenticity dispute",
+      "description": "A content partnership required three organic integration posts with genuine audience engagement, against which a performance bonus was calculated. Post-campaign analysis indicates the published posts showed engagement patterns consistent with undisclosed automated amplification, breaching the authenticity clause and materially inflating the bonus.",
+      "evidence_urls": ["https://example.com/"],
+      "defense": {
+        "text": "The analysis cited cannot distinguish coordinated amplification from genuine viral distribution, and every post was written and published manually from my account. The agreement restricted only disclosure, which was satisfied on all three posts; it never defined measurable authenticity thresholds or engagement source limits.",
+        "evidence_urls": ["https://example.org/", "https://www.iana.org/domains/reserved"]
+      },
+      "suggested_stakes": [
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 14 },
+        { "outcome": "GUILTY", "gen": 7 },
+        { "outcome": "NOT_GUILTY", "gen": 5 }
+      ]
+    },
+    {
+      "slug": "auction-terms-violation",
+      "stage": "judge-now",
+      "title": "Marketplace auction terms violation",
+      "description": "A timed auction series explicitly prohibited automated bidding under its published terms. Transaction timing records show the winning bidder submitted machine-paced bids across twelve auctions — each placed in the final seconds at identical intervals — which devalued the lots for human participants and voids the winning bids under the terms.",
+      "evidence_urls": ["https://example.com/", "https://example.org/"],
+      "defense": {
+        "text": "The timing pattern described is equally consistent with a disciplined manual strategy driven by calendar alerts, and the published terms never defined a technical test for automation. Every bid was deliberately placed after reviewing lot conditions, and the marketplace accepted each bid at the time of submission without flagging any violation.",
+        "evidence_urls": ["https://www.iana.org/help/example-domains"]
+      },
+      "suggested_stakes": [
+        { "outcome": "GUILTY", "gen": 20 },
+        { "outcome": "NOT_GUILTY", "gen": 9 },
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 4 }
+      ]
+    },
+    {
+      "slug": "brand-identity-undelivered",
+      "stage": "await-defense",
+      "title": "Undelivered brand identity commission",
+      "description": "I commissioned a complete brand identity package and paid forty percent upfront. The designer missed three consecutive milestones with written acknowledgments of the delays, then stopped responding entirely after the final deadline. My product launched without the contracted assets, and the advance payment has not been returned despite a formal refund request.",
+      "evidence_urls": ["https://example.com/"],
+      "defense": null,
+      "suggested_stakes": [
+        { "outcome": "GUILTY", "gen": 10 },
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 2 }
+      ]
+    },
+    {
+      "slug": "joint-venture-profit-split",
+      "stage": "full-cycle",
+      "title": "Joint venture profit split disagreement",
+      "description": "Two partners agreed in writing to split proceeds from a joint liquidity venture 60/40, with monthly settlement statements published to a shared register. The managing partner issued statements for four months then stopped, while the register shows continued profit accrual. The final statement misclassifies two revenue events in a way that reduces the minority share below the agreed ratio.",
+      "evidence_urls": ["https://www.iana.org/domains/reserved", "https://example.com/"],
+      "defense": {
+        "text": "Settlement paused because the minority partner failed to countersign the third amended statement, which the agreement requires before distribution. The two revenue events in question were reclassifications mandated by the agreement's own accounting annex, not discretionary adjustments. The split ratio itself was never altered.",
+        "evidence_urls": ["https://example.org/"]
+      },
+      "suggested_stakes": [
+        { "outcome": "GUILTY", "gen": 11 },
+        { "outcome": "NOT_GUILTY", "gen": 11 },
+        { "outcome": "INSUFFICIENT_EVIDENCE", "gen": 6 }
+      ]
+    }
+  ]
+}

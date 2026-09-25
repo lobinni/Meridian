@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Lyra">
+  <defs>
+    <radialGradient id="g-juror-lyra" cx="38%" cy="28%" r="82%">
+      <stop offset="0%" stop-color="#164c41"/>
+      <stop offset="62%" stop-color="#07110e"/>
+      <stop offset="100%" stop-color="#040a08"/>
+    </radialGradient>
+    <linearGradient id="r-juror-lyra" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#35d5b4" stop-opacity=".95"/>
+      <stop offset="100%" stop-color="#35d5b4" stop-opacity=".15"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="50" fill="url(#g-juror-lyra)"/>
+  <circle cx="50" cy="50" r="48.2" fill="none" stroke="url(#r-juror-lyra)" stroke-width="1.6"/>
+  <!-- shoulders -->
+  <path d="M18 100 Q22 74 50 74 Q78 74 82 100 Z" fill="#35d5b4" opacity=".16"/>
+  <path d="M18 100 Q22 74 50 74 Q78 74 82 100" fill="none" stroke="#35d5b4" stroke-width="1.5" opacity=".5"/>
+  <!-- head -->
+  <path d="M34 44 Q34 26 50 26 Q66 26 66 44 Q66 64 50 70 Q34 64 34 44 Z" fill="#164c41" opacity=".95"/>
+  <path d="M34 44 Q34 26 50 26 Q66 26 66 44 Q66 64 50 70 Q34 64 34 44 Z" fill="none" stroke="#35d5b4" stroke-width="1.5" opacity=".7"/>
+  
+    <circle cx="42" cy="49" r="2.4" fill="#35d5b4"/>
+    <circle cx="58" cy="49" r="2.4" fill="#35d5b4"/>
+    <path d="M30 38 H40 V33" fill="none" stroke="#35d5b4" stroke-width="1.4" opacity=".7"/>
+    <path d="M70 38 H60 V33" fill="none" stroke="#35d5b4" stroke-width="1.4" opacity=".7"/>
+    <path d="M44 61 H56" stroke="#35d5b4" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+  <circle cx="50" cy="50" r="49.2" fill="none" stroke="#f8fcf9" stroke-opacity=".10" stroke-width="1"/>
+</svg>

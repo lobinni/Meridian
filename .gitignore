@@ -1,0 +1,48 @@
+# Dependencies
+/node_modules
+.pnp
+.pnp.*
+
+# Testing
+/coverage
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# Next.js
+/.next/
+/out/
+/build
+
+# Production artifacts
+*.tsbuildinfo
+
+# Environment & secrets (NEVER commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+# `.env.production` holds only public (non-secret) dApp configuration and IS
+# committed intentionally so deployments pick it up without dashboard setup.
+!.env.production
+
+# Vercel
+.vercel
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.pem
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Generated types
+next-env.d.ts
